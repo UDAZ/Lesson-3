@@ -10,10 +10,7 @@ class BookCommentsController < ApplicationController
     
     def destroy
     end
-    def show
-        @book = Book.find(params[:id])
-        @book_comment = BookComment.new
-    end
+
     private
 
     def book_comment_params
