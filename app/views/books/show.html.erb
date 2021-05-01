@@ -32,6 +32,19 @@
           </td>
         </tr>
       </table>
+      <div class="comments">
+        <% @book.book_comments.each do |book_comment| %>
+          <p><%= image_tag('sample-author1.jpg') %></p>
+          <%= book_comment.user.name %>
+          <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= book_comment.comment %>
+        <% end %>
+      </div>
+      <div class="new-comment">
+        <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+          <%= f.submit "送信する" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
