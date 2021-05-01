@@ -21,6 +21,8 @@
             <%= render partial: 'favorites/fav', locals: { book: @book} %>
           </td>
           <td>
+            コメント数：<%= @book.book_comments.count %>          </td>
+          <td>
             <% if @book.user == current_user %>
               <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %>
             <% end %>
