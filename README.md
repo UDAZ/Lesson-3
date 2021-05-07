@@ -23,3 +23,8 @@ createとdestroyアクションを作成
   resources :books do
     resources :book_comments, only: [:create, :destroy]
   end
+  
+# ⑤ビューの作成
+
+# ⑥コメントのインスタンス変数を記述
+
