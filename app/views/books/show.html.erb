@@ -29,6 +29,23 @@
           </td>
         </tr>
       </table>
+      <table class='table'>
+        <% @book.post_comments.each do |book_comment| %>
+  		  <tr>
+  		    <td><%= link_to user_path(@user) do %>
+            <%= attachment_image_tag(@user, :profile_image, :fill, 100, 100, fallback: "no-image-icon.jpg") %><br>
+            <%= book_comment.user.name %>
+            <% end %>
+          </td>
+          <td><%= book_comment.comment %></td>
+          <td>
+            <% if @book.user == current_user %>
+              <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>
