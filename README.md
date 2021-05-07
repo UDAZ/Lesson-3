@@ -14,3 +14,6 @@ has_many :book_comments, dependent: :destroy
 book_comment.rbに
 belongs_to :user
 belongs_to :book
+
+# ③コメント用のコントローラーを作成
+rails g controller BookComments
