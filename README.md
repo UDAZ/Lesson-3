@@ -17,3 +17,9 @@ belongs_to :book
 
 # ③コメント用のコントローラーを作成
 rails g controller BookComments
+createとdestroyアクションを作成
+
+# ④ルーティングの作成
+  resources :books do
+    resources :book_comments, only: [:create, :destroy]
+  end
