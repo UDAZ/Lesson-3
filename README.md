@@ -33,7 +33,7 @@ resources :books
   end
 ```  
 ### ⑤ビューの作成
-####①showに配置する一覧とフォームのview
+#### ①showに配置する一覧とフォームのview
     
         <div class="comments">
           <table class='table'>
@@ -75,7 +75,7 @@ resources :books
         <% end %>
       </div> 
     
-####②indexに配置するカウントview
+#### ②indexに配置するカウントview
 ```
 <td>コメント件数：<%= @book.book_comments.count %></td>
 ```
