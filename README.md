@@ -155,9 +155,13 @@ _fav.html.erb
     <% end %>
 <% end %>
 ```
-で使用
+showだと
 ```
-<%= render 'favorites/_fav', book: @book %>
+<%= render 'favorites/fav', book: @book %>
+```
+indexだと
+```
+<%= render 'favorites/fav', book: book %>
 ```
 ### ⑥favoriteコントローラーにアクションを記載
 ```
