@@ -26,7 +26,7 @@ createとdestroyアクションを作成
   
 # ⑤ビューの作成
 ①showに配置する一覧とフォームのview
-  `
+    
         <div class="comments">
           <table class='table'>
             <t-body>
@@ -65,7 +65,8 @@ createとdestroyアクションを作成
           <%= f.text_area :comment, rows:'3',placeholder: "コメントをここに", :style=>"width:100%;" %>
           <%= f.submit "送信する" %>
         <% end %>
-      </div> `
+      </div> 
+    
 ②indexに配置するカウントview
 <td>コメント件数：<%= @book.book_comments.count %></td>
 # ⑥コメントのインスタンス変数を記述
