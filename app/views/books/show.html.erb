@@ -55,11 +55,11 @@
       </table>
       </div>
       <div class="new-comment">
-        <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-          <% if @book_comment.errors.any? %>
+        <%= form_with(model:[@book, @comment], local: true) do |f| %>
+          <% if @comment.errors.any? %>
             <div id="error_explanation">
               <ul>
-                <% book_comment.errors.full_messages.each do |message| %>
+                <% @comment.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
                 <% end %>
               </ul>
