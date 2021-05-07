@@ -17,7 +17,9 @@ belongs_to :user
 belongs_to :book
 ```
 ### ③コメント用のコントローラーを作成
+```
 rails g controller BookComments
+```
 createとdestroyアクションを作成
 
 ### ④ルーティングの追記
