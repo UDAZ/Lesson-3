@@ -6,15 +6,17 @@
 ```
 rails g model BookComment comment:text user_id:integer book_id:integer
 ```
-### ②モデルの関連付け
-user.rbとbook.rbに
+### ②モデルの関連付けとバリデーション
+#### user.rbとbook.rbに関連付け
+
 ```
 has_many :book_comments, dependent: :destroy
 ```
-book_comment.rbに
+#### book_comment.rbに関連付けとバリデーション
 ```
 belongs_to :user
 belongs_to :book
+validates :comment, presence: true
 ```
 ### ③コメント用のコントローラーを作成
 ```
