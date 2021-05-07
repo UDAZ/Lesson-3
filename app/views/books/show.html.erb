@@ -31,7 +31,7 @@
       </table>
       <table class='table'>
         <t-body>
-          <% @book_comments.each do |book_comment| %>
+          <% @book.each do |book_comment| %>
             <tr><% unless book_comment.id.nil? %>
                 <td>
                   <%= link_to user_path(book_comment.user) do %>
@@ -51,6 +51,11 @@
           <% end %>
         </t-body>
       </table>
-    </div>
+      <div class="new-comment">
+        <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+          <%= f.submit "送信する" %>
+        <% end %>
+      </div>
   </div>
 </div>
