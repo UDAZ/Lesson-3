@@ -115,3 +115,26 @@ class BookCommentsController < ApplicationController
 end
 ```
 ## いいね機能
+### ①ルーティングの追加
+```
+  resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorites, only: [:create, :destroy] 
+  end
+```
+### ②モデル作成
+```
+rails g model Favorite user_id:integer book_id:integer
+```
+### ③アソシエーションの追加
+#### ①bookモデルに追加
+```
+  has_many :favorites, dependent: :destroy
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+```
+#### ②favoriteモデルに追加
+```
+  belongs_to :user
+  belongs_to :book
+```
