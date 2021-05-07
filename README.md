@@ -78,7 +78,7 @@ createとdestroyアクションを作成
  ```
  を追加
 # ⑦コメントコントローラーアクションを記述
-    
+```
 class BookCommentsController < ApplicationController
     
     def create
@@ -103,5 +103,5 @@ class BookCommentsController < ApplicationController
     end
     
 end
-    
+```
 # いいね機能
