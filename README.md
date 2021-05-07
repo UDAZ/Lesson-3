@@ -1,5 +1,3 @@
-# README
-
 # Lesson-3 いいねとコメント
 
 ## コメント機能
@@ -7,7 +5,7 @@
 ### ①モデル作成
 rails g model BookComment comment:text user_id:integer book_id:integer
 
-# ②モデルの関連付け
+### ②モデルの関連付け
 user.rbとbook.rbに
 has_many :book_comments, dependent: :destroy
 
@@ -15,17 +13,17 @@ book_comment.rbに
 belongs_to :user
 belongs_to :book
 
-# ③コメント用のコントローラーを作成
+### ③コメント用のコントローラーを作成
 rails g controller BookComments
 createとdestroyアクションを作成
 
-# ④ルーティングの作成
+### ④ルーティングの作成
   resources :books do
     resources :book_comments, only: [:create, :destroy]
   end
   
-# ⑤ビューの作成
-①showに配置する一覧とフォームのview
+### ⑤ビューの作成
+####①showに配置する一覧とフォームのview
     
         <div class="comments">
           <table class='table'>
@@ -67,17 +65,17 @@ createとdestroyアクションを作成
         <% end %>
       </div> 
     
-②indexに配置するカウントview
+####②indexに配置するカウントview
 ```
 <td>コメント件数：<%= @book.book_comments.count %></td>
 ```
-# ⑥コメントのインスタンス変数を記述
+### ⑥コメントのインスタンス変数を記述
  books_controller.rbのshowに
  ```
  @book_comment = BookComment.new
  ```
  を追加
-# ⑦コメントコントローラーアクションを記述
+### ⑦コメントコントローラーアクションを記述
 ```
 class BookCommentsController < ApplicationController
     
@@ -104,4 +102,4 @@ class BookCommentsController < ApplicationController
     
 end
 ```
-# いいね機能
+## いいね機能
