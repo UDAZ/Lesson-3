@@ -138,3 +138,24 @@ rails g model Favorite user_id:integer book_id:integer
   belongs_to :user
   belongs_to :book
 ```
+### ④favoritesコントローラーを作成
+```
+rails g controller Favorites
+```
+### ⑤viewをテンプレートで作成
+_fav.html.erb
+```
+<% if book.favorited_by?(current_user) %>
+    <%= link_to book_favorites_path(book), :style=>"color:red;", method: :delete, remote: true do %>
+        ♥<%= book.favorites.count %>
+    <% end %>
+<% else %>
+    <%= link_to book_favorites_path(book), :style=>"color:blue;", method: :post, remote: true do %>
+        ♥<%= book.favorites.count %>
+    <% end %>
+<% end %>
+```
+で使用
+```
+<%= render 'favorites/_fav', book: @book %>
+```
