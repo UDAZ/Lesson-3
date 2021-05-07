@@ -68,7 +68,9 @@ createとdestroyアクションを作成
       </div> 
     
 ②indexに配置するカウントview
+    
 <td>コメント件数：<%= @book.book_comments.count %></td>
+    
 # ⑥コメントのインスタンス変数を記述
  books_controller.rbのshowに
  @book_comment = BookComment.new
