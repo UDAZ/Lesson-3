@@ -84,7 +84,7 @@ resources :books
 ### ⑥コメントのインスタンス変数を記述
  books_controller.rbのshowに
  ```
- @book_comment = BookComment.new
+ @comment = BookComment.new
  ```
  を追加
 ### ⑦コメントコントローラーアクションを記述
