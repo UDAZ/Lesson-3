@@ -138,3 +138,7 @@ rails g model Favorite user_id:integer book_id:integer
   belongs_to :user
   belongs_to :book
 ```
+### ④favoritesコントローラーを作成
+```
+rails g controller Favorites
+```
